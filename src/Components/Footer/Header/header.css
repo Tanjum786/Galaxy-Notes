@@ -1,0 +1,33 @@
+.nav-bar {
+    background-color: var(--primary-balck-color);
+    height: 7rem;
+    box-shadow: 2px 2px 2px 2px var(--black-color);
+    border-top: 3px solid var(--secondary-red-color);
+}
+
+.header-container {
+    justify-content: space-between;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.app-titel {
+    color: var(--secondary-red-color);
+}
+
+.span-color {
+    color: var(--pureWhite-color);
+}
+
+.login_btn {
+    background-color: var(--secondary-red-color);
+    padding: 1rem;
+    width: 6rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.login_btn:hover {
+    background-color: var(--secondary-red-color);
+}

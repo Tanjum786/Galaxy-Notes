@@ -1,0 +1,48 @@
+.hero-img {
+    height: 35rem;
+    padding: 5rem;
+}
+
+.home-container {
+    justify-content: center;
+    align-items: center;
+    height: 50rem;   
+}
+
+.disc-container {
+    padding: 3rem;
+    flex-direction: column;
+}
+
+.home-discription {
+    width: 70rem;
+    font-size: 2.5rem;
+}
+
+.home-titel {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.signup-btn {
+    width: 10rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .home-discription {
+        width: 50rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .home-discription {
+        width: 40rem;
+    }
+
+    .home-container {
+        flex-direction: column;
+        height: 100rem;
+    }
+}

@@ -1,0 +1,6 @@
+export {Lebels} from './Labels/Lebels'
+export {Home} from './Home/Home'
+export {Trash} from './Trash/Trash'
+export {Login} from './Authentication/Login'
+export {Signup} from './Authentication/Signup'
+export {Archive} from './Archive/Archive'
