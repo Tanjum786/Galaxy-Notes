@@ -1,0 +1,48 @@
+.newNote-container {
+  width: 80rem;
+  background-color: var(--primary-balck-color);
+}
+.input-container {
+  padding: 1rem;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--pureWhite-color);
+}
+.input-filed {
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.titel-label,
+.input-filed {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+.label-container {
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+.editor{
+    background-color: var(--pureWhite-color);
+    color: var(--primary-balck-color);
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .newNote-container{
+        width:50rem ;
+    }
+    
+}
+@media screen and (max-width: 425px) {
+    .newNote-container{
+        width:27rem;
+
+    }
+    .label-container{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+}

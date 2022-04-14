@@ -1,0 +1,12 @@
+
+.notePage-container{
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    margin: 3rem;
+    justify-content: center;
+}
+.title{
+    text-align: center;
+    padding: 1rem;
+    font-size: 3rem;
+}
