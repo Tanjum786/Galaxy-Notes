@@ -38,9 +38,11 @@ export const Login = () => {
               <Link to="" className="forget_password">
                 <span>Forgot password ?</span>
               </Link>
+              <Link to='/notes'>
               <button type="submit" className="login_btn btn_style">
                 Login
               </button>
+              </Link>
               <p className="new_account_link font_small">
                 Not a user yet ? <Link to="/signup" className="alert_primary">
                   Creat account
