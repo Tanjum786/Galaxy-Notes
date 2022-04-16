@@ -1,24 +1,27 @@
 import React from "react";
 import "./newnote.css";
 
-export const Newnotecard = () => {
+export const Newnotecard = ({ notesDetailes }) => {
+  const {notes:{priority,label,title,notebody,date}}=notesDetailes
   return (
     <>
       <div className="newnote-container">
         <div className="labels-container">
-          <p className="sub-label">Work</p>
-          <p className="sub-label">Home</p>
+          <p className="sub-label">{priority}</p>
+          <p className="sub-label">{label}</p>
           <div className="dis_flex pin-container">
             <button className="pin-btn">
               <i className="fa-solid fa-thumbtack pin-btn"></i>
             </button>
           </div>
         </div>
-
+        <hr />
         <div className="notes-body">
-          <h1>Title</h1>
-          <h2>body of notes</h2>
-          <span className="date">created on : 1/2/2021</span>
+          <h1>{title}</h1>
+          <p
+            dangerouslySetInnerHTML={{ __html: notebody }}
+          ></p>
+          <span className="date">created on: {date}</span>
         </div>
 
         <div className="editing-tools dis_flex">
