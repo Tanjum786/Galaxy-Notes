@@ -1,16 +1,22 @@
 import React from "react";
-import { useNotes } from "../../Hooks/context/Notex-context";
+import { useNotes, usePaltte } from "../../Hooks/context";
+import { Colorpalette } from "../ColorPalette/Colorpalette";
 import "./newnote.css";
 
 export const Newnotecard = ({ notesDetailes }) => {
-  const { priority, label, title, notebody,id 
-  } = notesDetailes;
+  const { priority, label, title, notebody, id } = notesDetailes;
 
-  const { Notesdispatch,notesObj } = useNotes();
+  const { Notesdispatch, notesObj,setnotes } = useNotes();
+  const {toggelColors,setToggelColors}=usePaltte()
+
+  const colorchangeHandler=((notesDetailes,color)=>{
+    setnotes({...notesDetailes,bgColor:(notesDetailes.bgColor=color)})
+    setnotes({...notesObj})
+  })
 
   return (
     <>
-      <div className="newnote-container">
+      <div className="newnote-container" style={{backgroundColor:notesDetailes.bgColor}}>
         <div className="labels-container">
           <p className="sub-label">{priority}</p>
           <p className="sub-label">{label}</p>
@@ -22,14 +28,24 @@ export const Newnotecard = ({ notesDetailes }) => {
         </div>
         <hr />
         <div className="notes-body">
-          <h1>{title}</h1>
-          <p dangerouslySetInnerHTML={{ __html: notebody }}></p>
+          <h1>Title : {title}</h1>
+          <span dangerouslySetInnerHTML={{ __html: notebody }}></span>
           <span className="date">created on: {notesObj.date}</span>
         </div>
 
         <div className="editing-tools dis_flex">
-          <button className="tool-btns">
+          <button
+            className="tool-btns"
+            onClick={() => setToggelColors((prevColor) => !prevColor)}
+          >
             <i className="tool-icon fa-solid fa-palette"></i>
+            {toggelColors && (
+              <Colorpalette
+                colorPalettecolors={(color) =>
+                  colorchangeHandler(notesDetailes, color)
+                }
+              />
+            )}
           </button>
           <button className="tool-btns">
             <i className="tool-icon fa-solid fa-pen-to-square"></i>

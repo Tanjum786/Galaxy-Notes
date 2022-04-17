@@ -12,6 +12,7 @@ const NotesProvider = ({ children }) => {
     title: "",
     priority: "",
     notebody:'',
+    bgColor:'#fffff',
     edit: false,
     pinnote: false,
     date: new Date().toLocaleString(),

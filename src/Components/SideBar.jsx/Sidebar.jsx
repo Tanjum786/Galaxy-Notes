@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNotes } from "../../Hooks/context";
 import "./Sidebar.css";
 
 export const Sidebar = () => {
+  const {NotesState}=useNotes();
+  const {trashList,archiveList}=NotesState
   return (
     <>
       <aside className="sidebar-container">
@@ -30,6 +33,7 @@ export const Sidebar = () => {
         <div className="sub-menus">
           <Link to="/archive">
             <p className="sub-menu-titel">
+            <span className="note-badge">{archiveList.length}</span>  
               <i className="menu-icon fa fa-box-archive"></i> Archive
             </p>
           </Link>
@@ -37,6 +41,7 @@ export const Sidebar = () => {
         <div className="sub-menus">
           <Link to="/trash">
             <p className="sub-menu-titel">
+            <span className="note-badge">{trashList.length}</span>  
               <i className="menu-icon fa fa-trash-can"></i> Trash
             </p>
           </Link>

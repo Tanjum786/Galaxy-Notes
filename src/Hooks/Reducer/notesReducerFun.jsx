@@ -51,6 +51,7 @@ export const NotesReducer = (NotesState, NotesAction) => {
     case "DELETE_FROM_ARCHIVE":
       return {
         ...NotesState,
+        trashList: [...trashList, NotesAction.payload],
         archiveList: archiveList.filter(
           (item) => item.id != NotesAction.payload.id
         ),

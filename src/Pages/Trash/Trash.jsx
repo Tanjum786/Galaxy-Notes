@@ -1,6 +1,6 @@
 import React from "react";
 import { Sidebar } from "../../Components/SideBar.jsx/Sidebar";
-import { useNotes } from "../../Hooks/context/Notex-context";
+import { useNotes } from "../../Hooks/context/Notes-context";
 
 export const Trash = () => {
   const { Notesdispatch, NotesState } = useNotes();
@@ -34,8 +34,8 @@ export const Trash = () => {
                       </div>
                       <hr />
                       <div className="notes-body">
-                        <h1>{title}</h1>
-                        <p dangerouslySetInnerHTML={{ __html: notebody }}></p>
+                        <h1>Title : {title}</h1>
+                        <span dangerouslySetInnerHTML={{ __html: notebody }}></span>
                         <span className="date">created on: {date}</span>
                       </div>
 

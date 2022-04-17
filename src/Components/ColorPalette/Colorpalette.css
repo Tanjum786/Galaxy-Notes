@@ -1,0 +1,20 @@
+.colorpalette-container{
+    background-color:var(--gray-color);
+    width: 24rem;
+    height: 7rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    position: relative;
+    bottom: 13rem;
+    right: 10rem;
+
+}
+.colors-palette{
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+}

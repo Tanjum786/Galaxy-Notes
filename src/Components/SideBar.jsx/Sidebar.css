@@ -1,29 +1,74 @@
-.sidebar-container{
-    height: 50rem;
-    margin: 3rem;
-    padding-top: 2rem;
-    width: 25rem;
-    border-radius: 1rem;
-    background-color: var(--secondary-color);
-    box-shadow: 15px 12px 12px 15px solid var(--primary-balck-color);
+.sidebar-container {
+  height: 50rem;
+  margin: 3rem;
+  padding-top: 2rem;
+  width: 25rem;
+  border-radius: 1rem;
+  background-color: var(--secondary-color);
+  box-shadow: 15px 12px 12px 15px solid var(--primary-balck-color);
 }
-.sub-menus{
+.sub-menus {
+  margin: 1rem;
+  position: relative;
+}
+.menu-icon {
+  margin-right: 0.5rem;
+  color: var(--pureWhite-color);
+}
+.sub-menu-titel {
+  color: var(--pureWhite-color);
+  font-size: 2rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+.sub-menu-titel:hover {
+  background-color: var(--primary-balck-color);
+  color: var(--secondary-red-color);
+  transition: 0.3s ease-in-out;
+}
+
+.note-badge{
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 3rem;
+  left: 0.5rem;
+  text-align: center;
+  color: var(--primary-balck-color);
+  background-color: var(--secondary-red-color);
+  
+}
+@media screen and (width: 425px) {
+  .sidebar-container {
+    height: 10rem;
+    width: 55rem;
+    display: flex;
+    flex-direction: row;
     margin: 1rem;
+  }
 }
-.menu-icon{
-    margin-right: 0.5rem;
-    color: var(--pureWhite-color);
+@media screen and (width: 320px) {
+  .sidebar-container {
+    height: 10rem;
+    width: 55rem;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+  }
 }
-.sub-menu-titel{
-   color: var(--pureWhite-color); 
-   font-size: 2rem;
-   cursor: pointer;
-   border: 1px solid transparent;
-   border-radius: 2rem;
-   padding: 1rem;
-}
-.sub-menu-titel:hover{
-    background-color: var(--primary-balck-color);
-    color: var(--secondary-red-color);
-    transition: 0.3s ease-in-out;
+@media screen and (width: 375px) {
+  .sidebar-container {
+    height: 10rem;
+    width: 50rem;
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem;
+  }
+  .sub-menu-titel {
+    margin: 0rem;
+    width: 6.5rem;
+  }
 }

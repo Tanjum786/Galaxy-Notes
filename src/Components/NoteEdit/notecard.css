@@ -41,13 +41,25 @@
 }
 @media screen and (max-width: 425px) {
   .newNote-container {
-    width: 27rem;
+    width: 50rem;
   }
   .label-container {
     display: flex;
     flex-wrap: wrap;
   }
   .trash-container {
-    width: 20rem;
+    width: 50rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .newNote-container {
+    width: 45rem;
+  }
+  .label-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .trash-container {
+    width: 50rem;
   }
 }
