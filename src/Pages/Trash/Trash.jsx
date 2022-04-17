@@ -19,8 +19,8 @@ export const Trash = () => {
                 </h1>
                 {trashList.map((notesDetailes) => {
                   const {
-                    notes: { priority, title, label, date, notebody, id },
-                  } = notesDetailes;
+                    priority, title, label, date, notebody, id 
+                  } = notesDetailes
                   return (
                     <div className="newnote-container">
                       <div className="labels-container">
@@ -36,7 +36,7 @@ export const Trash = () => {
                       <div className="notes-body">
                         <h1>{title}</h1>
                         <p dangerouslySetInnerHTML={{ __html: notebody }}></p>
-                        <span className="date">created on:{date}</span>
+                        <span className="date">created on: {date}</span>
                       </div>
 
                       <div className="editing-tools dis_flex">

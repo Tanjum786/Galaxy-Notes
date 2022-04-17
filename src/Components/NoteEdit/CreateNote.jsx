@@ -21,7 +21,7 @@ export const CreateNote = () => {
   };
   const NotesubmitHandler = (e) => {
     e.preventDefault();
-    Notesdispatch({ type: "ADD_NOTE", payload: { notes } });
+    Notesdispatch({ type: "ADD_NOTE", payload: notes });
     setnotes('');
   };
   const modules = {
@@ -178,7 +178,7 @@ export const CreateNote = () => {
                 onChange={(e) =>setnotes({...notes,notebody:e})}
               />
             </div>
-            <button type='reste' className="login_btn btn_style">Add Note</button>
+            <button className="login_btn btn_style">Add Note</button>
           </div>
         </div>
       </form>

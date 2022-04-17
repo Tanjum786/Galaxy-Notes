@@ -3,10 +3,10 @@ import { useNotes } from "../../Hooks/context/Notex-context";
 import "./newnote.css";
 
 export const Newnotecard = ({ notesDetailes }) => {
-  const {
-    notes: { priority, label, title, notebody, date, id },
+  const { priority, label, title, notebody,id 
   } = notesDetailes;
-  const { Notesdispatch } = useNotes();
+
+  const { Notesdispatch,notesObj } = useNotes();
 
   return (
     <>
@@ -24,7 +24,7 @@ export const Newnotecard = ({ notesDetailes }) => {
         <div className="notes-body">
           <h1>{title}</h1>
           <p dangerouslySetInnerHTML={{ __html: notebody }}></p>
-          <span className="date">created on: {date}</span>
+          <span className="date">created on: {notesObj.date}</span>
         </div>
 
         <div className="editing-tools dis_flex">
@@ -34,7 +34,12 @@ export const Newnotecard = ({ notesDetailes }) => {
           <button className="tool-btns">
             <i className="tool-icon fa-solid fa-pen-to-square"></i>
           </button>
-          <button className="tool-btns">
+          <button
+            className="tool-btns"
+            onClick={() =>
+              Notesdispatch({ type: "MOVE_TO_ARCHIVE", payload: notesDetailes })
+            }
+          >
             <i className="tool-icon fa-solid fa-box-archive"></i>
           </button>
 
