@@ -1,14 +1,13 @@
 .newnote-container{
    background-color: var(--pureWhite-color);
-   color: black;
+   color: var(--body-balck-color);
 }
 .labels-container{
     display: flex;
     margin:1rem;
     gap: 1rem;
     padding: 0.5rem;
-    position: relative;
-    
+    position: relative; 
 }
 .sub-label{
     padding: 1rem;
@@ -48,4 +47,3 @@
     padding: 0;
     font-size: 1.5rem;
 }
-
