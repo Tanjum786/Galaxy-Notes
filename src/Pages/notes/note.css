@@ -10,3 +10,12 @@
     padding: 1rem;
     font-size: 3rem;
 }
+
+
+
+@media screen and (max-width: 425px) {
+    .note-main-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,11 +1,16 @@
 import React from "react";
+import { Colorpalette } from "../../Components/ColorPalette/Colorpalette";
 import { Sidebar } from "../../Components/SideBar.jsx/Sidebar";
-import { useNotes } from "../../Hooks/context/Notex-context";
+import { useNotes, usePaltte } from "../../Hooks/context";
 
 export const Archive = () => {
-  const { Notesdispatch, NotesState } = useNotes();
+  const { Notesdispatch, NotesState, setnotes } = useNotes();
   const { archiveList } = NotesState;
-
+  const { toggelColors, setToggelColors } = usePaltte();
+  const colorchangeHandler = (notesDetailes, color) => {
+    setnotes({ ...notesDetailes, bgColor: (notesDetailes.bgColor = color) });
+    setnotes({ ...notesObj });
+  };
   return (
     <>
       <div className="note-main-container dis_flex ">
@@ -18,10 +23,13 @@ export const Archive = () => {
                   {` You Have ${archiveList.length} Notes in Archive`}
                 </h1>
                 {archiveList.map((notesDetailes) => {
-                  const {
-                    priority, title, label, date, notebody, id }= notesDetailes;
+                  const { priority, title, label, date, notebody, id } =
+                    notesDetailes;
                   return (
-                    <div className="newnote-container">
+                    <div
+                      className="newnote-container"
+                      style={{ backgroundColor: notesDetailes.bgColor }}
+                    >
                       <div className="labels-container">
                         <p className="sub-label">{priority}</p>
                         <p className="sub-label">{label}</p>
@@ -33,14 +41,26 @@ export const Archive = () => {
                       </div>
                       <hr />
                       <div className="notes-body">
-                        <h1>{title}</h1>
-                        <p dangerouslySetInnerHTML={{ __html: notebody }}></p>
+                        <h1>Title : {title}</h1>
+                        <span dangerouslySetInnerHTML={{ __html: notebody }}></span>
                         <span className="date">created on: {date}</span>
                       </div>
 
                       <div className="editing-tools dis_flex">
-                        <button className="tool-btns">
+                        <button
+                          className="tool-btns"
+                          onClick={() =>
+                            setToggelColors((prevcolor) => !prevcolor)
+                          }
+                        >
                           <i className="tool-icon fa-solid fa-palette"></i>
+                          {toggelColors && (
+                            <Colorpalette
+                              colorPalettecolors={(color) =>
+                                colorchangeHandler(notesDetailes, color)
+                              }
+                            />
+                          )}
                         </button>
                         <button
                           className="tool-btns"
@@ -58,11 +78,11 @@ export const Archive = () => {
                           onClick={() =>
                             Notesdispatch({
                               type: "DELETE_FROM_ARCHIVE",
-                              payload: { id: id },
+                              payload:notesDetailes,
                             })
                           }
                         >
-                          <i class="fa-solid fa-trash tool-icon"></i>
+                          <i class="tool-icon fa-solid fa-trash-can"></i>
                         </button>
                       </div>
                     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import ReactQuill from "react-quill";
 import "./notecard.css";
 import "react-quill/dist/quill.snow.css";
-import { useNotes } from "../../Hooks/context/Notex-context";
+import { useNotes } from "../../Hooks/context/Notes-context";
 export const CreateNote = () => {
   const { notes, setnotes, Notesdispatch, notesObj } = useNotes();
 
@@ -51,7 +51,7 @@ export const CreateNote = () => {
                 className="input-filed"
                 type="text"
                 name="title"
-                placeholder="title"
+                placeholder="Enter a title"
                 checked={notes.title}
                 onChange={(e) => ChangeHandler(e)}
                 required
