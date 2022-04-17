@@ -1,6 +1,11 @@
-import { Sidebar } from '../../Components/SideBar.jsx/Sidebar'
+import React from "react";
+import { Sidebar } from "../../Components/SideBar.jsx/Sidebar";
+import { useNotes } from "../../Hooks/context/Notex-context";
 
 export const Archive = () => {
+  const { Notesdispatch, NotesState } = useNotes();
+  const { archiveList } = NotesState;
+
   return (
     <>
       <div className="note-main-container dis_flex ">
