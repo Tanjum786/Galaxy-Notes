@@ -20,29 +20,34 @@
 }
 .label-container {
   gap: 2rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
-.editor{
-    background-color: var(--pureWhite-color);
-    color: var(--primary-balck-color);
+.editor {
+  background-color: var(--pureWhite-color);
+  color: var(--primary-balck-color);
 }
 
-
+.trash-container {
+  width: 90rem;
+}
 
 @media screen and (max-width: 768px) {
-    .newNote-container{
-        width:50rem ;
-    }
-    
+  .newNote-container {
+    width: 50rem;
+  }
+  .trash-container {
+    width: 50rem;
+  }
 }
 @media screen and (max-width: 425px) {
-    .newNote-container{
-        width:27rem;
-
-    }
-    .label-container{
-      display: flex;
-      flex-wrap: wrap;
-    }
-    
+  .newNote-container {
+    width: 27rem;
+  }
+  .label-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .trash-container {
+    width: 20rem;
+  }
 }

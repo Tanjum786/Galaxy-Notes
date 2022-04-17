@@ -6,11 +6,13 @@ export const Sidebar = () => {
   return (
     <>
       <aside className="sidebar-container">
+      <div className="sub-menus">
         <Link to="/notes">
-          <button className="login_btn btn_style">
-            Notes
-          </button>
+          <p className="sub-menu-titel">
+          <i class="fa-solid fa-book-open menu-icon"></i> Notes
+          </p>
         </Link>
+          </div>
         <div className="sub-menus">
           <Link to="/">
             <p className="sub-menu-titel">

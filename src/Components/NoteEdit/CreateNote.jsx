@@ -21,7 +21,7 @@ export const CreateNote = () => {
   };
   const NotesubmitHandler = (e) => {
     e.preventDefault();
-    Notesdispatch({ type: "ADD_NOTE", payload: { notes } });
+    Notesdispatch({ type: "ADD_NOTE", payload: notes });
     setnotes('');
   };
   const modules = {
@@ -70,8 +70,7 @@ export const CreateNote = () => {
                   checked={notes.label === "home"}
                   onChange={(e) => ChangeHandler(e)}
                   required
-                />
-                Home
+                /> Home
               </label>
               <label htmlFor="work">
                 <input
@@ -82,8 +81,7 @@ export const CreateNote = () => {
                   checked={notes.label === "work"}
                   onChange={(e) => ChangeHandler(e)}
                   required
-                />
-                Work
+                /> Work
               </label>
               <label htmlFor="exercise">
                 <input
@@ -94,8 +92,7 @@ export const CreateNote = () => {
                   checked={notes.label === "exercise"}
                   onChange={(e) => ChangeHandler(e)}
                   required
-                />
-                Exercise
+                /> Exercise
               </label>
               <label htmlFor="chores">
                 <input
@@ -106,8 +103,7 @@ export const CreateNote = () => {
                   checked={notes.label === "chores"}
                   onChange={(e) => ChangeHandler(e)}
                   required
-                />
-                Chores
+                /> Chores
               </label>
               <label htmlFor="creativity">
                 <input
@@ -118,8 +114,7 @@ export const CreateNote = () => {
                   checked={notes.label === "creativity"}
                   onChange={(e) => ChangeHandler(e)}
                   required
-                />
-                Creativity
+                /> Creativity
               </label>
               <label htmlFor="others">
                 <input
@@ -130,8 +125,7 @@ export const CreateNote = () => {
                   checked={notes.label === "others"}
                   onChange={(e) => ChangeHandler(e)}
                   required
-                />
-                Others
+                /> Others
               </label>
             </div>
             <p className="titel-label">
@@ -147,8 +141,7 @@ export const CreateNote = () => {
                   checked={notes.priority === "High"}
                   onChange={(e) => ChangeHandler(e)}
                   required
-                />
-                High
+                /> High
               </label>
               <label htmlFor="Low">
                 <input
@@ -159,8 +152,7 @@ export const CreateNote = () => {
                   checked={notes.priority === "Low"}
                   onChange={(e) => ChangeHandler(e)}
                   required
-                />
-                Low
+                /> Low
               </label>
               <label htmlFor="Medium">
                 <input
@@ -171,8 +163,7 @@ export const CreateNote = () => {
                   checked={notes.priority === "Medium"}
                   onChange={(e) => ChangeHandler(e)}
                   required
-                />
-                Medium
+                /> Medium
               </label>
             </div>
             <div className="toolbar-container">
@@ -187,7 +178,7 @@ export const CreateNote = () => {
                 onChange={(e) =>setnotes({...notes,notebody:e})}
               />
             </div>
-            <button type='reste' className="login_btn btn_style">Add Note</button>
+            <button className="login_btn btn_style">Add Note</button>
           </div>
         </div>
       </form>
