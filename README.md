@@ -1,4 +1,4 @@
-# [E-Galaxy-Notes](https://galaxy-notes-app.vercel.app/)
+# [Galaxy-Notes](https://galaxy-notes-app.vercel.app/)
 Galaxy-Notes is note taking app where you can keep your notes for long time. Galaxy-Notes helps you to making notes and helps you in organizing your day. 
 
 ## Technologies used 
@@ -35,7 +35,7 @@ Galaxy-Notes is note taking app where you can keep your notes for long time. Gal
  - Run `npm start`
  
 ## Live project
-  # [E-Galaxy-Notes](https://galaxy-notes-app.vercel.app/)
+  # [Galaxy-Notes](https://galaxy-notes-app.vercel.app/)
 
 
 ## Preview
