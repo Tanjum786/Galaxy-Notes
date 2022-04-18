@@ -51,7 +51,8 @@ export const Signup = () => {
                 required
               />
               <label htmlFor="Confirm_pass">
-                Confirm password<small className="star_color font_small">*</small>
+                Confirm password
+                <small className="star_color font_small">*</small>
               </label>
               <div className="showpassword_container">
                 <input
@@ -61,9 +62,7 @@ export const Signup = () => {
                   placeholder="Enter your Password again"
                   required
                 />
-                <i
-                  className="fa-solid fa-eye-slash eye_slash"
-                ></i>
+                <i className="fa-solid fa-eye-slash eye_slash"></i>
               </div>
               <div className="checkbox_section">
                 <input
@@ -75,11 +74,14 @@ export const Signup = () => {
                 />
                 <label htmlFor="terms"> I accept all Terms & Conditions</label>
               </div>
-              <button type="submit" className="login_btn  btn_style">
-                Register
-              </button>
+              <Link to="/notes">
+                <button type="submit" className="login_btn  btn_style">
+                  Register
+                </button>
+              </Link>
               <p className="new_account_link font_small">
-                Already have account? <Link to="/login" className="alert_primary">
+                Already have account?{" "}
+                <Link to="/login" className="alert_primary">
                   Login Here
                 </Link>
               </p>
