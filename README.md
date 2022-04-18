@@ -33,6 +33,10 @@ Galaxy-Notes is note taking app where you can keep your notes for long time. Gal
  - cd E-Galaxy-store
  - Install npm with `npm install` in your Terminal
  - Run `npm start`
+ 
+## Live project
+  # [E-Galaxy-Notes](https://galaxy-notes-app.vercel.app/)
+
 
 ## Preview
 
