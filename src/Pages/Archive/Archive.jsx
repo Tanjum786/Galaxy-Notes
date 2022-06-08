@@ -1,7 +1,7 @@
 import React from "react";
 import { Colorpalette } from "../../Components/ColorPalette/Colorpalette";
 import { Sidebar } from "../../Components/SideBar.jsx/Sidebar";
-import { useNotes, usePaltte } from "../../Hooks/context";
+import { useNotes, usePaltte } from "../../context";
 
 export const Archive = () => {
   const { Notesdispatch, NotesState, setnotes } = useNotes();

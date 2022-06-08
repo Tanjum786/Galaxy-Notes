@@ -2,7 +2,7 @@ import React from "react";
 import { Newnotecard } from "../../Components/NewNotecard/Newnotecard";
 import { CreateNote } from "../../Components/NoteEdit/CreateNote";
 import { Sidebar } from "../../Components/SideBar.jsx/Sidebar";
-import { useNotes } from "../../Hooks/context/Notes-context";
+import { useNotes } from "../../context/Notes-context";
 import "./note.css";
 
 export const Notes = () => {

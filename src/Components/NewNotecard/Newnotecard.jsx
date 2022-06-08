@@ -1,5 +1,5 @@
 import React from "react";
-import { useNotes, usePaltte } from "../../Hooks/context";
+import { useNotes, usePaltte } from "../../context";
 import { Colorpalette } from "../ColorPalette/Colorpalette";
 import "./newnote.css";
 

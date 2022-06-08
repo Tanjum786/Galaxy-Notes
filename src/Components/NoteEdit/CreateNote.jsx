@@ -2,7 +2,7 @@ import React from "react";
 import ReactQuill from "react-quill";
 import "./notecard.css";
 import "react-quill/dist/quill.snow.css";
-import { useNotes } from "../../Hooks/context/Notes-context";
+import { useNotes } from "../../context/Notes-context";
 export const CreateNote = () => {
   const { notes, setnotes, Notesdispatch, notesObj } = useNotes();
 
