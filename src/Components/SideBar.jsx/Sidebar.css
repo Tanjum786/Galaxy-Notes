@@ -22,7 +22,6 @@
   border-radius: 0.5rem;
   padding: 1rem;
   border-left: 2px solid transparent;
-
 }
 .sub-menu-titel:hover {
   background-color: var(--primary-balck-color);
@@ -30,43 +29,57 @@
   transition: 0.3s ease-in-out;
   border-left: 2px solid var(--secondary-red-color);
 }
-.not-active{
+.not-active {
   color: var(--pureWhite-color);
-  
 }
-.active{
+.active {
   color: var(--secondary-red-color);
-
 }
 
 @media screen and (width: 425px) {
   .sidebar-container {
     height: 10rem;
+    position: sticky;
+    top: 7rem;
+    margin: 0 2rem 0 2rem;
     width: 55rem;
     display: flex;
     flex-direction: row;
-    margin: 1rem;
+    justify-content: space-evenly;
+  }
+  .span {
+    display: none;
   }
 }
 @media screen and (width: 320px) {
   .sidebar-container {
     height: 10rem;
+    position: sticky;
+    top: 8rem;
+    margin: 0 2rem 0 2rem;
     width: 55rem;
     display: flex;
     flex-direction: row;
     margin: 1rem;
+    justify-content: space-between;
+  }
+  .span {
+    display: none;
   }
 }
 @media screen and (width: 375px) {
   .sidebar-container {
+    position: sticky;
+    top: 7.5rem;
+    margin: 0 2rem 0 2rem;
     height: 10rem;
     width: 50rem;
     display: flex;
     flex-direction: row;
     margin: 0.5rem;
+    justify-content: space-between;
   }
-  .sub-menu-titel {
-    margin: 0rem;
-    width: 6.5rem;
+  .span {
+    display: none;
   }
 }

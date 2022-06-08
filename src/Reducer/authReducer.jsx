@@ -1,5 +1,4 @@
 export const authReducer = (authState, authAction) => {
-  console.log(authAction.payload, "sd");
   switch (authAction.type) {
     case "USER-DETAILES":
       return {

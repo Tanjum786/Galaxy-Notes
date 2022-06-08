@@ -71,7 +71,7 @@ export const Archive = () => {
                             })
                           }
                         >
-                          <i class="fa-solid fa-box-open tool-icon"></i>
+                          <i className="fa-solid fa-box-open tool-icon"></i>
                         </button>
                         <button
                           className="tool-btns"
@@ -82,7 +82,7 @@ export const Archive = () => {
                             })
                           }
                         >
-                          <i class="tool-icon fa-solid fa-trash-can"></i>
+                          <i className="tool-icon fa-solid fa-trash-can"></i>
                         </button>
                       </div>
                     </div>

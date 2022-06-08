@@ -49,7 +49,7 @@ export const Trash = () => {
                             })
                           }
                         >
-                          <i class="fa-solid fa-arrow-rotate-left tool-icon"></i>
+                          <i className="fa-solid fa-arrow-rotate-left tool-icon"></i>
                         </button>
                         <button
                           className="tool-btns"
@@ -60,7 +60,7 @@ export const Trash = () => {
                             })
                           }
                         >
-                          <i class="fa-solid fa-trash tool-icon"></i>
+                          <i className="fa-solid fa-trash tool-icon"></i>
                         </button>
                       </div>
                     </div>
