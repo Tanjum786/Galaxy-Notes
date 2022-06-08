@@ -1,6 +1,6 @@
 import React from "react";
 import { Sidebar } from "../../Components/SideBar.jsx/Sidebar";
-import { useNotes } from "../../Hooks/context/Notes-context";
+import { useNotes } from "../../context/Notes-context";
 
 export const Trash = () => {
   const { Notesdispatch, NotesState } = useNotes();
