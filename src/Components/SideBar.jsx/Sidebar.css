@@ -1,5 +1,5 @@
 .sidebar-container {
-  height: 50rem;
+  height: 45rem;
   margin: 3rem;
   padding-top: 2rem;
   width: 25rem;
@@ -16,31 +16,29 @@
   color: var(--pureWhite-color);
 }
 .sub-menu-titel {
-  color: var(--pureWhite-color);
   font-size: 2rem;
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   padding: 1rem;
+  border-left: 2px solid transparent;
+
 }
 .sub-menu-titel:hover {
   background-color: var(--primary-balck-color);
   color: var(--secondary-red-color);
   transition: 0.3s ease-in-out;
+  border-left: 2px solid var(--secondary-red-color);
 }
-
-.note-badge{
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 3rem;
-  left: 0.5rem;
-  text-align: center;
-  color: var(--primary-balck-color);
-  background-color: var(--secondary-red-color);
+.not-active{
+  color: var(--pureWhite-color);
   
 }
+.active{
+  color: var(--secondary-red-color);
+
+}
+
 @media screen and (width: 425px) {
   .sidebar-container {
     height: 10rem;
