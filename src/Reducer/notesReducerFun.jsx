@@ -1,63 +1,51 @@
 export const NotesReducer = (NotesState, NotesAction) => {
-  const { NotesList, trashList, archiveList } = NotesState;
   switch (NotesAction.type) {
     case "ADD_NOTE":
       return {
         ...NotesState,
-        NotesList: [...NotesList, NotesAction.payload],
+        notes: NotesAction.payload,
       };
-    case "MOVE_TO_TRASH":
+    case "REMOVE_FROM_NOTES":
       return {
         ...NotesState,
-        trashList: [...trashList, NotesAction.payload],
-        NotesList: NotesList.filter(
-          (item) => item.id != NotesAction.payload.id
-        ),
+        notes: NotesAction.payload,
       };
 
-    case "DELETE_FORM_TRASH":
-      const Deletenote = trashList.filter(
-        (item) => item.id != NotesAction.payload.id
-      );
+    case "Move_TO_TRASH":
       return {
         ...NotesState,
-        trashList: Deletenote,
+        trash: [...NotesState.trash, NotesAction.payload],
       };
-    case "RESTORE":
+    case "DELETE_FROM_TRASH":
       return {
         ...NotesState,
-        NotesList: [...NotesList, NotesAction.payload],
-        trashList: trashList.filter(
-          (item) => item.id != NotesAction.payload.id
-        ),
+        trash: NotesAction.payload,
       };
-    case "MOVE_TO_ARCHIVE":
+    case "ADD_NOTE_ARCHIVE":
       return {
         ...NotesState,
-        archiveList: [...archiveList, NotesAction.payload],
-        NotesList: NotesList.filter(
-          (item) => item.id != NotesAction.payload.id
-        ),
+        archiveList: NotesAction.payload,
       };
-    case "MOVE_FROM_ARCHIVE":
-      const DleteArchive= archiveList.filter(
-          (item) => item.id != NotesAction.payload.id
-        )
+    case "REMOVE_NOTE_FROM_ARCHIVE":
       return {
         ...NotesState,
-        NotesList: [...NotesList, NotesAction.payload],
-        archiveList:DleteArchive
+        archiveList: NotesAction.payload,
       };
-    case "DELETE_FROM_ARCHIVE":
+    case "RESTOE_NOTE_FROM_ARCHIVE":
       return {
         ...NotesState,
-        trashList: [...trashList, NotesAction.payload],
-        archiveList: archiveList.filter(
-          (item) => item.id != NotesAction.payload.id
-        ),
+        archiveList: NotesAction.payload,
       };
-
-      
+    case "EDIT_NOTES":
+      return {
+        ...NotesState,
+        notes: NotesAction.payload,
+      };
+    case "PINED_NOTE":
+      return{
+        ...NotesState,
+        pinList:NotesAction.payload
+      }
     default:
       return { ...NotesState };
   }

@@ -1,15 +1,16 @@
 import React from "react";
-import { Colorpalette } from "../../Components/ColorPalette/Colorpalette";
-import { Sidebar } from "../../Components/SideBar.jsx/Sidebar";
+import { BsPin } from "react-icons/bs";
+import { deleteFromArchive, restoreFromArchive } from "../../ApiCalls";
+import { Colorpalette, Sidebar } from "../../Components";
 import { useNotes, usePaltte } from "../../context";
 
 export const Archive = () => {
   const { Notesdispatch, NotesState, setnotes } = useNotes();
   const { archiveList } = NotesState;
   const { toggelColors, setToggelColors } = usePaltte();
+  const token = localStorage.getItem("token");
   const colorchangeHandler = (notesDetailes, color) => {
     setnotes({ ...notesDetailes, bgColor: (notesDetailes.bgColor = color) });
-    setnotes({ ...notesObj });
   };
   return (
     <>
@@ -17,12 +18,12 @@ export const Archive = () => {
         <Sidebar />
         <div className="notePage-container dis_flex">
           <div className="trash-container">
-            {archiveList.length > 0 ? (
+            {archiveList?.length > 0 ? (
               <>
                 <h1 className="notetitle">
-                  {` You Have ${archiveList.length} Notes in Archive`}
+                  {` You Have ${archiveList?.length} Notes in Archive`}
                 </h1>
-                {archiveList.map((notesDetailes) => {
+                {archiveList?.map((notesDetailes) => {
                   const { priority, title, label, date, notebody, id } =
                     notesDetailes;
                   return (
@@ -34,15 +35,18 @@ export const Archive = () => {
                         <p className="sub-label">{priority}</p>
                         <p className="sub-label">{label}</p>
                         <div className="dis_flex pin-container">
-                          <button className="pin-btn">
-                            <i className="fa-solid fa-thumbtack pin-btn"></i>
-                          </button>
+                          <BsPin
+                            className="pin-btn"
+                            size="4rem"
+                          />
                         </div>
                       </div>
                       <hr />
                       <div className="notes-body">
                         <h1>Title : {title}</h1>
-                        <span dangerouslySetInnerHTML={{ __html: notebody }}></span>
+                        <span
+                          dangerouslySetInnerHTML={{ __html: notebody }}
+                        ></span>
                         <span className="date">created on: {date}</span>
                       </div>
 
@@ -65,10 +69,11 @@ export const Archive = () => {
                         <button
                           className="tool-btns"
                           onClick={() =>
-                            Notesdispatch({
-                              type: "MOVE_FROM_ARCHIVE",
-                              payload: notesDetailes,
-                            })
+                            restoreFromArchive(
+                              notesDetailes,
+                              token,
+                              Notesdispatch
+                            )
                           }
                         >
                           <i className="fa-solid fa-box-open tool-icon"></i>
@@ -76,10 +81,11 @@ export const Archive = () => {
                         <button
                           className="tool-btns"
                           onClick={() =>
-                            Notesdispatch({
-                              type: "DELETE_FROM_ARCHIVE",
-                              payload:notesDetailes,
-                            })
+                            deleteFromArchive(
+                              notesDetailes,
+                              token,
+                              Notesdispatch
+                            )
                           }
                         >
                           <i className="tool-icon fa-solid fa-trash-can"></i>
