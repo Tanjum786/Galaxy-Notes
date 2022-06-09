@@ -13,21 +13,19 @@ const NotesProvider = ({ children }) => {
     priority: "",
     notebody:'',
     bgColor:'#fffff',
-    edit: false,
-    pinnote: false,
+    isediting: false,
     date: new Date().toLocaleString(),
   }
-  const [notes, setnotes] = useState(notesObj);
+  const [note, setnotes] = useState(notesObj);
   const [NotesState, Notesdispatch] = useReducer(NotesReducer, {
-    NotesList: [],
-    trashList: [],
+    notes: [],
+    trash: [],
     archiveList: [],
-    pinList: [],
   });
 
   return (
     <Notescontext.Provider
-      value={{ notes, NotesState, setnotes, Notesdispatch ,notesObj}}
+      value={{ note, NotesState, setnotes, Notesdispatch ,notesObj}}
     >
       {children}
     </Notescontext.Provider>

@@ -1,30 +1,46 @@
 import React from "react";
-import { useNotes, usePaltte } from "../../Hooks/context";
-import { Colorpalette } from "../ColorPalette/Colorpalette";
+import { BsPinFill, BsPin } from "react-icons/bs";
+import { useState } from "react";
+import { archiveNotes, deleteNotes } from "../../ApiCalls";
+import { useNotes, usePaltte } from "../../context";
 import "./newnote.css";
+import { Colorpalette } from "../ColorPalette/Colorpalette";
 
-export const Newnotecard = ({ notesDetailes }) => {
-  const { priority, label, title, notebody, id } = notesDetailes;
+export const Newnotecard = ({ notesDetailes, setcreateNote }) => {
+  const [isPin,setIspin]=useState(false)
+  const { priority, label, title, notebody } = notesDetailes;
+  const token = localStorage.getItem("token");
+  const { Notesdispatch, notesObj, setnotes } = useNotes();
+  const { toggelColors, setToggelColors } = usePaltte();
 
-  const { Notesdispatch, notesObj,setnotes } = useNotes();
-  const {toggelColors,setToggelColors}=usePaltte()
+  const colorchangeHandler = (notesDetailes, color) => {
+    setnotes({ ...notesDetailes, bgColor: (notesDetailes.bgColor = color) });
+    setnotes({ ...notesObj });
+  };
+  const editNotesHandle = (notesDetailes) => {
+    setnotes({ ...notesDetailes, isediting: (notesDetailes.isediting = true) });
+    setcreateNote(true);
+  };
 
-  const colorchangeHandler=((notesDetailes,color)=>{
-    setnotes({...notesDetailes,bgColor:(notesDetailes.bgColor=color)})
-    setnotes({...notesObj})
+  const pinNoteHandler=(()=>{
+    setIspin(!isPin)
   })
-
   return (
     <>
-      <div className="newnote-container" style={{backgroundColor:notesDetailes.bgColor}}>
+      <div
+        className="newnote-container"
+        style={{ backgroundColor: notesDetailes.bgColor }}
+      >
         <div className="labels-container">
           <p className="sub-label">{priority}</p>
           <p className="sub-label">{label}</p>
-          <div className="dis_flex pin-container">
-            <button className="pin-btn">
-              <i className="fa-solid fa-thumbtack pin-btn"></i>
-            </button>
-          </div>
+          <button className="dis_flex pin-container" onClick={pinNoteHandler}>
+            {isPin ? (
+              <BsPinFill size="4rem" className="pin-btn" />
+            ) : (
+              <BsPin size="4rem" className="pin-btn" />
+            )}
+          </button>
         </div>
         <hr />
         <div className="notes-body">
@@ -47,26 +63,22 @@ export const Newnotecard = ({ notesDetailes }) => {
               />
             )}
           </button>
-          <button className="tool-btns">
+          <button
+            className="tool-btns"
+            onClick={() => editNotesHandle(notesDetailes)}
+          >
             <i className="tool-icon fa-solid fa-pen-to-square"></i>
           </button>
           <button
             className="tool-btns"
-            onClick={() =>
-              Notesdispatch({ type: "MOVE_TO_ARCHIVE", payload: notesDetailes })
-            }
+            onClick={() => archiveNotes(notesDetailes, token, Notesdispatch)}
           >
             <i className="tool-icon fa-solid fa-box-archive"></i>
           </button>
 
           <button
             className="tool-btns"
-            onClick={() => {
-              Notesdispatch({
-                type: "MOVE_TO_TRASH",
-                payload: notesDetailes,
-              });
-            }}
+            onClick={() => deleteNotes(notesDetailes, token, Notesdispatch)}
           >
             <i className="tool-icon fa-solid fa-trash-can"></i>
           </button>

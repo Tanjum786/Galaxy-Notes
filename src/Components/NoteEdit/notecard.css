@@ -1,6 +1,13 @@
 .newNote-container {
-  width: 80rem;
   background-color: var(--primary-balck-color);
+}
+.main-noteCard-container {
+  gap: 7rem;
+}
+.del-icon {
+  font-size: 2rem;
+  color: var(--pureWhite-color);
+  cursor: pointer;
 }
 .input-container {
   padding: 1rem;
@@ -32,17 +39,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  .newNote-container {
-    width: 50rem;
-  }
   .trash-container {
     width: 50rem;
   }
 }
 @media screen and (max-width: 425px) {
-  .newNote-container {
-    width: 50rem;
-  }
   .label-container {
     display: flex;
     flex-wrap: wrap;
@@ -52,9 +53,6 @@
   }
 }
 @media screen and (max-width: 375px) {
-  .newNote-container {
-    width: 45rem;
-  }
   .label-container {
     display: flex;
     flex-wrap: wrap;

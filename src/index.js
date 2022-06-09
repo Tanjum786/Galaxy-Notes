@@ -3,18 +3,23 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import { ColorsProvider,NotesProvider } from "./Hooks/context";
+import { AuthProvider, ColorsProvider, NotesProvider } from "./context";
+import { BrowserRouter } from "react-router-dom";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <NotesProvider>
-      <ColorsProvider>
-        <App />
-      </ColorsProvider>
-    </NotesProvider>
+    <BrowserRouter>
+      <NotesProvider>
+        <ColorsProvider>
+          <AuthProvider>
+            <App />
+          </AuthProvider>
+        </ColorsProvider>
+      </NotesProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

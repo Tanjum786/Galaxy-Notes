@@ -1,5 +1,5 @@
 .sidebar-container {
-  height: 50rem;
+  height: 45rem;
   margin: 3rem;
   padding-top: 2rem;
   width: 25rem;
@@ -16,59 +16,70 @@
   color: var(--pureWhite-color);
 }
 .sub-menu-titel {
-  color: var(--pureWhite-color);
   font-size: 2rem;
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   padding: 1rem;
+  border-left: 2px solid transparent;
 }
 .sub-menu-titel:hover {
   background-color: var(--primary-balck-color);
   color: var(--secondary-red-color);
   transition: 0.3s ease-in-out;
+  border-left: 2px solid var(--secondary-red-color);
+}
+.not-active {
+  color: var(--pureWhite-color);
+}
+.active {
+  color: var(--secondary-red-color);
 }
 
-.note-badge{
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 3rem;
-  left: 0.5rem;
-  text-align: center;
-  color: var(--primary-balck-color);
-  background-color: var(--secondary-red-color);
-  
-}
 @media screen and (width: 425px) {
   .sidebar-container {
     height: 10rem;
+    position: sticky;
+    top: 7rem;
+    margin: 0 2rem 0 2rem;
     width: 55rem;
     display: flex;
     flex-direction: row;
-    margin: 1rem;
+    justify-content: space-evenly;
+  }
+  .span {
+    display: none;
   }
 }
 @media screen and (width: 320px) {
   .sidebar-container {
     height: 10rem;
+    position: sticky;
+    top: 8rem;
+    margin: 0 2rem 0 2rem;
     width: 55rem;
     display: flex;
     flex-direction: row;
     margin: 1rem;
+    justify-content: space-between;
+  }
+  .span {
+    display: none;
   }
 }
 @media screen and (width: 375px) {
   .sidebar-container {
+    position: sticky;
+    top: 7.5rem;
+    margin: 0 2rem 0 2rem;
     height: 10rem;
     width: 50rem;
     display: flex;
     flex-direction: row;
     margin: 0.5rem;
+    justify-content: space-between;
   }
-  .sub-menu-titel {
-    margin: 0rem;
-    width: 6.5rem;
+  .span {
+    display: none;
   }
 }
