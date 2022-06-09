@@ -1,49 +1,60 @@
-.newnote-container{
-   background-color: var(--pureWhite-color);
-   color: var(--body-balck-color);
+.newnote-container {
+  background-color: var(--pureWhite-color);
+  color: var(--body-balck-color);
+  width: 80rem;
 }
-.labels-container{
-    display: flex;
-    margin:1rem;
-    gap: 1rem;
-    padding: 0.5rem;
-    position: relative; 
+.labels-container {
+  display: flex;
+  margin: 1rem;
+  gap: 1rem;
+  padding: 0.5rem;
+  position: relative;
 }
-.sub-label{
-    padding: 1rem;
-    border-radius:1rem;
-    background-color: var(--danger-alert-bg);
+.sub-label {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--danger-alert-bg);
 }
-.pin-btn{
-    padding: 1rem;
-    font-size: 1.5rem;
-    color: var(--primary-black-color);
-    border: none;
-    background-color: transparent;
+.pin-btn {
+  padding: 1rem;
+  color: var(--primary-black-color)
+}
+.pin-container {
+  position: absolute;
+  right: 0.5rem;
+  border: none;
+  background-color: transparent;
+}
+.editing-tools {
+  justify-content: flex-end;
+  gap: 3rem;
+  padding: 1rem;
+}
+.tool-btns {
+  height: 4rem;
+  width: 4rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--tool-bg-color);
+}
+.tool-icon {
+  color: var(--pureWhite-color);
+}
+.notes-body {
+  margin: 1rem;
+  padding: 0;
+  font-size: 1.5rem;
+}
 
+@media screen and (max-width: 768px) {
+  .newnote-container {
+    width: 50rem;
+  }
 }
-.pin-container{
-    position: absolute;
-    right:0.5rem;
-}
-.editing-tools{
-    justify-content: flex-end;
-    gap: 3rem;
-    padding: 1rem;
-}
-.tool-btns{
-    height: 4rem;
-    width: 4rem;
-    font-size: 2rem;
-     border-radius: 50%;
-     border: none;
-     background-color: var(--tool-bg-color);
-}
-.tool-icon{
-    color: var(--pureWhite-color);
-}
-.notes-body{
-    margin: 1rem;
-    padding: 0;
-    font-size: 1.5rem;
+
+@media screen and (max-width: 375px) {
+  .newnote-container {
+    width: 45rem;
+  }
 }
