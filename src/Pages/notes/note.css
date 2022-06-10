@@ -1,21 +1,32 @@
-
-.notePage-container{
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    margin: 3rem;
-    justify-content: center;
+.notePage-container {
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  margin: 3rem;
+  width: 90rem;
+  justify-content: center;
 }
-.notetitle{
-    text-align: center;
-    padding: 1rem;
-    font-size: 3rem;
+.notetitle {
+  text-align: center;
+  padding: 1rem;
+  font-size: 3rem;
 }
 
+.btn-filter-container {
+  justify-content: space-between;
+  cursor: pointer;
+}
+.createnote-btn {
+  width: 15rem;
+  margin-left: 3rem;
+}
 
 
 @media screen and (max-width: 425px) {
-    .note-main-container {
-        display: flex;
-        flex-direction: column;
-    }
+  .note-main-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .notePage-container {
+    width: 50rem;
+  }
 }

@@ -14,8 +14,15 @@ import {
   deleteNoteHandler,
   getAllNotesHandler,
   updateNoteHandler,
+  updateNotePinHandler,
 } from "./backend/controllers/NotesController";
+import {
+  deleteFromTrashHandler,
+  getAllTrashNotesHandler,
+  restoreFromTrashHandler,
+} from "./backend/controllers/TrashController";
 import { users } from "./backend/db/users";
+import { v4 as uuid } from "uuid";
 
 export function makeServer({ environment = "development" } = {}) {
   const server = new Server({
@@ -36,6 +43,8 @@ export function makeServer({ environment = "development" } = {}) {
           ...item,
           notes: [],
           archives: [],
+          trash: [],
+          pin:[]
         })
       );
     },
@@ -52,6 +61,7 @@ export function makeServer({ environment = "development" } = {}) {
       this.post("/notes/:noteId", updateNoteHandler.bind(this));
       this.delete("/notes/:noteId", deleteNoteHandler.bind(this));
       this.post("/notes/archives/:noteId", archiveNoteHandler.bind(this));
+      this.post("/notes/pin/:noteId", updateNotePinHandler.bind(this));
 
       // archive routes (private)
       this.get("/archives", getAllArchivedNotesHandler.bind(this));
@@ -63,6 +73,11 @@ export function makeServer({ environment = "development" } = {}) {
         "/archives/delete/:noteId",
         deleteFromArchivesHandler.bind(this)
       );
+
+      // trash routes (private)
+      this.get("/trash", getAllTrashNotesHandler.bind(this));
+      this.post("/trash/restore/:noteId", restoreFromTrashHandler.bind(this));
+      this.delete("/trash/delete/:noteId", deleteFromTrashHandler.bind(this));
     },
   });
   return server;

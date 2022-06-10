@@ -5,6 +5,8 @@ import { heroimage } from "../../Assets";
 import "./home.css";
 
 export const Home = () => {
+  const token = localStorage.getItem("token");
+  const user = localStorage.getItem("users");
   return (
     <>
       <main className="dis_flex home-container">
@@ -15,9 +17,15 @@ export const Home = () => {
             right place or time. GalaxyNotes makes it easy to capture a thought
             or manage your workflow.
           </p>
-          <Link to="/signup">
-            <button className="login_btn signup-btn">Join Now</button>
-          </Link>
+          {token ? (
+            <Link to="/notes">
+              <button className="login_btn signup-btn">Notes</button>
+            </Link>
+          ) : (
+            <Link to="/signup">
+              <button className="login_btn signup-btn">Join Now</button>
+            </Link>
+          )}
         </div>
         <div>
           <img src={heroimage} alt="heroimage" className="hero-img" />

@@ -1,57 +1,55 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useNotes } from "../../Hooks/context";
+import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
 
 export const Sidebar = () => {
-  const {NotesState}=useNotes();
-  const {trashList,archiveList}=NotesState
   return (
     <>
       <aside className="sidebar-container">
-      <div className="sub-menus">
-        <Link to="/notes">
-          <p className="sub-menu-titel">
-          <i class="fa-solid fa-book-open menu-icon"></i> Notes
-          </p>
-        </Link>
-          </div>
         <div className="sub-menus">
-          <Link to="/">
+          <NavLink
+            to="/notes"
+            className={({ isActive }) => (isActive ? "active" : "not-active")}
+          >
             <p className="sub-menu-titel">
-              <i className="menu-icon fa fa-house"></i> Home
+              <i className="fa-solid fa-book-open menu-icon"></i>
+              <span className="span">Notes</span>
             </p>
-          </Link>
+          </NavLink>
         </div>
         <div className="sub-menus">
-          <Link to="">
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : "not-active")}
+          >
             <p className="sub-menu-titel">
-              <i className="menu-icon fa fa-tag"></i> Labels
+              <i className="menu-icon fa fa-house"></i>
+              <span className="span">Home</span>
             </p>
-          </Link>
+          </NavLink>
+        </div>
+
+        <div className="sub-menus">
+          <NavLink
+            to="/archive"
+            className={({ isActive }) => (isActive ? "active" : "not-active")}
+          >
+            <p className="sub-menu-titel">
+              <i className="menu-icon fa fa-box-archive"></i>
+              <span className="span">Archive</span>
+            </p>
+          </NavLink>
         </div>
         <div className="sub-menus">
-          <Link to="/archive">
+          <NavLink
+            to="/trash"
+            className={({ isActive }) => (isActive ? "active" : "not-active")}
+          >
             <p className="sub-menu-titel">
-            <span className="note-badge">{archiveList.length}</span>  
-              <i className="menu-icon fa fa-box-archive"></i> Archive
+              <i className="menu-icon fa fa-trash-can"></i>
+              <span className="span">Trash</span>
             </p>
-          </Link>
-        </div>
-        <div className="sub-menus">
-          <Link to="/trash">
-            <p className="sub-menu-titel">
-            <span className="note-badge">{trashList.length}</span>  
-              <i className="menu-icon fa fa-trash-can"></i> Trash
-            </p>
-          </Link>
-        </div>
-        <div className="sub-menus">
-          <Link to="">
-            <p className="sub-menu-titel">
-              <i className="menu-icon fas fa-circle-user"></i> Profile
-            </p>
-          </Link>
+          </NavLink>
         </div>
       </aside>
     </>

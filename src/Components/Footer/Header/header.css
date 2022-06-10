@@ -7,13 +7,23 @@
     top: 0;
     z-index: 1;
 }
+.login-container{
+    gap: 2rem;
+}
 
 .header-container {
     justify-content: space-between;
     padding: 2rem;
     font-size: 2rem;
 }
+.user-icons{
+    color: var(--pureWhite-color);
+    text-align: center;
+}
 
+.user-icon-container{
+    flex-direction: column;
+}
 .app-titel {
     color: var(--secondary-red-color);
 }
@@ -22,6 +32,11 @@
     color: var(--pureWhite-color);
 }
 
+.logout-btn{
+    padding: 0;
+    height: 3.5rem;
+    margin-top: 0.5rem;
+}
 .login_btn {
     background-color: var(--secondary-red-color);
     padding: 1rem;
