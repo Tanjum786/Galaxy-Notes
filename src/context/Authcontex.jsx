@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useState, useReducer } from "react";
+import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { authReducer } from "../Reducer/authReducer";
 
 const authcontext = createContext();
@@ -49,6 +49,7 @@ const AuthProvider = ({ children }) => {
             password,
             confirmPassword,
           });
+          console.log(response)
           navigate(-2);
           toast.success(`${firstName} successfully created account`);
           localStorage.setItem("token", response.data.encodedToken);
@@ -62,6 +63,7 @@ const AuthProvider = ({ children }) => {
             user: response.data.createdUser,
           });
         } catch (error) {
+          console.log(error)
           toast.error(error.response.data.errors[0]);
         }
       }

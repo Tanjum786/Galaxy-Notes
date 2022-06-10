@@ -2,7 +2,7 @@ import React from "react";
 import "./header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 export const Header = () => {
   const token = localStorage.getItem("token");

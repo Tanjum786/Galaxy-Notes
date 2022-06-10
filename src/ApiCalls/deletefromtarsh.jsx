@@ -1,5 +1,5 @@
 import axios from "axios";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 export const deleteFromtrash = async (notesDetailes, token, Notesdispatch) => {
   try {
     const response = await axios.delete(
