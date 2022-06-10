@@ -24,12 +24,13 @@ export const Archive = () => {
                   {` You Have ${archiveList?.length} Notes in Archive`}
                 </h1>
                 {archiveList?.map((notesDetailes) => {
-                  const { priority, title, label, date, notebody, id } =
+                  const { priority, title, label, date, notebody, _id } =
                     notesDetailes;
                   return (
                     <div
                       className="newnote-container"
                       style={{ backgroundColor: notesDetailes.bgColor }}
+                      key={_id}
                     >
                       <div className="labels-container">
                         <p className="sub-label">{priority}</p>

@@ -29,10 +29,7 @@ export const Trash = () => {
                         <p className="sub-label">{priority}</p>
                         <p className="sub-label">{label}</p>
                         <div className="dis_flex pin-container">
-                          <BsPin
-                            className="pin-btn"
-                            size="4rem"
-                          />
+                          <BsPin className="pin-btn" size="4rem" />
                         </div>
                       </div>
                       <hr />
@@ -45,21 +42,6 @@ export const Trash = () => {
                       </div>
 
                       <div className="editing-tools dis_flex">
-                      <button
-                          className="tool-btns"
-                          onClick={() =>
-                            setToggelColors((prevcolor) => !prevcolor)
-                          }
-                        >
-                          <i className="tool-icon fa-solid fa-palette"></i>
-                          {toggelColors && (
-                            <Colorpalette
-                              colorPalettecolors={(color) =>
-                                colorchangeHandler(notesDetailes, color)
-                              }
-                            />
-                          )}
-                        </button>
                         <button
                           className="tool-btns"
                           onClick={() =>
